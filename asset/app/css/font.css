@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Vazir-Light';
+    src: url("../../font/Vazir-Light.eot");
+    src: url("../../font/Vazir-Light.eot?#iefix") format('embedded-opentype'),
+    url("../../font/Vazir-Light.otf") format('otf'),
+    url("../../font/Vazir-Light.ttf") format('truetype'),
+    url("../../font/Vazir-Light.woff") format('woff'),
+    url("../../font/Vazir-Light.woff2") format('woff2'),
+    url("../../font/Vazir-Light.svg#Vazir-Light") format('svg');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vazir-Bold';
+    src: url("../../font/Vazir-Bold.eot");
+    src: url("../../font/Vazir-Bold.eot?#iefix") format('embedded-opentype'),
+    url("../../font/Vazir-Bold.otf") format('otf'),
+    url("../../font/Vazir-Bold.ttf") format('truetype'),
+    url("../../font/Vazir-Bold.woff") format('woff'),
+    url("../../font/Vazir-Bold.woff2") format('woff2'),
+    url("../../font/Vazir-Bold.svg#Vazir-Light") format('svg');
+    font-display: swap;
+}
