@@ -1,9 +1,6 @@
 <?php
 
-
-namespace Core\Util;
-
-use Core\Service;
+namespace Core\Traits;
 
 trait Redirect
 {
@@ -16,8 +13,7 @@ trait Redirect
     }
     protected function redirectUrlBack()
     {
-        $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
-        if ($http_referer != null) {
+        if (isset($_SERVER['HTTP_REFERER'])) {
             header("Location: ".$_SERVER['HTTP_REFERER']);
         } else {
             echo "route not found";

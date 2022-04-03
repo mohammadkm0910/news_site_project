@@ -1,11 +1,10 @@
 <?php
 
-
 namespace App\Controller;
 
-use Core\Util\Image;
-use Core\Util\Redirect;
-use Core\Util\View;
+use Core\Traits\Image;
+use Core\Traits\Redirect;
+use Core\Traits\View;
 
 class Controller
 {

@@ -1,7 +1,6 @@
 <?php
 
-
-namespace Core\Util;
+namespace Core\Traits;
 
 trait Image
 {

@@ -1,8 +1,6 @@
 <?php
 
-namespace Core\Util;
-
-use Core\Service;
+namespace Core\Traits;
 
 trait View
 {

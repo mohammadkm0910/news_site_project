@@ -6,8 +6,8 @@ namespace App\Controller;
 
 use App\Database\SqlHelper;
 use Core\Service;
-use Core\Util\Redirect;
-use Core\Util\View;
+use Core\Traits\Redirect;
+use Core\Traits\View;
 
 class Auth
 {

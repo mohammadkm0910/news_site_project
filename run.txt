@@ -1,2 +1,2 @@
 cd..
-php -S localhost:8080 -t news
+php -S localhost:8080 -t news_site_project

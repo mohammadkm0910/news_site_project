@@ -61,16 +61,15 @@ class CreateSql
     {
         $dbInfo = Service::databaseInfo();
         $dbName = $dbInfo['DB_NAME'];
-        if ($isPermission) {
-            $connection = new \mysqli($dbInfo['DB_HOST'], $dbInfo['DB_USERNAME'], $dbInfo['DB_PASSWORD']);
-            $query = "CREATE DATABASE IF NOT EXISTS `$dbName` CHARACTER SET utf8 COLLATE utf8_general_ci;";
-            $connection->query($query);
-            $connection->close();
-            $db = new SqlHelper();
-            foreach ($this->tables as $table) {
-                $db->createTable($table);
-            }
-            $db->close();
+        if (!$isPermission) exit;
+        $connection = new \mysqli($dbInfo['DB_HOST'], $dbInfo['DB_USERNAME'], $dbInfo['DB_PASSWORD']);
+        $query = "CREATE DATABASE IF NOT EXISTS `$dbName` CHARACTER SET utf8 COLLATE utf8_general_ci;";
+        $connection->query($query);
+        $connection->close();
+        $db = new SqlHelper();
+        foreach ($this->tables as $table) {
+            $db->createTable($table);
         }
+        $db->close();
     }
 }
