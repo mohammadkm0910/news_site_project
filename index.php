@@ -4,14 +4,13 @@ use Core\Router\Routing;
 
 include("core/startup.php");
 
-//$cq = new \App\Database\CreateSql();
-//$cq->run(true);
+//\App\Database\CreateSql::run(true);
 
-//$backup = new \App\Database\Backup();
-//$backup->restore();
-//$backup->run();
+//\App\Database\Backup::restore();
 
-//$backup->deleteImagesUnAvailableDB();
+//\App\Database\Backup::run();
+
+//\App\Database\Backup::deleteImagesUnAvailableDB();
 
 $routing = new Routing();
 $routing->run();

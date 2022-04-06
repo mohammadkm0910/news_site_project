@@ -4,7 +4,7 @@ namespace App\Database;
 
 class Backup
 {
-    public function run()
+    public static function run()
     {
         $db = new SqlHelper();
         $groups = $db->select("SELECT * FROM `groups`")->fetchAll();
@@ -12,17 +12,17 @@ class Backup
         $news = $db->select("SELECT * FROM `news`")->fetchAll();
         $comments = $db->select("SELECT * FROM `comments`")->fetchAll();
         $dbInfo = [$groups, $users, $news, $comments];
-        $dbInfo = serialize($dbInfo);
+        $dbInfo = base64_encode(serialize($dbInfo));
         $backupDb = fix_path(BASE_PATH."/app/database/backup.db");
         fwrite(fopen($backupDb, 'w'), $dbInfo);
         $db->close();
     }
-    public function restore()
+    public static function restore()
     {
         $db = new SqlHelper();
         $backupDb = fix_path(BASE_PATH."/app/database/backup.db");
         $tables = ["groups", "users", "news", "comments"];
-        $dbInfo = unserialize(file_get_contents($backupDb));
+        $dbInfo = unserialize(base64_decode(file_get_contents($backupDb)));
         for ($i = 0; $i < sizeof($tables); $i++) {
             foreach ($dbInfo[$i] as $value) {
                 $db->insert($tables[$i], array_keys($dbInfo[$i][0]), $value);
@@ -30,7 +30,7 @@ class Backup
         }
         $db->close();
     }
-    public function deleteImagesUnAvailableDB()
+    public static function deleteImagesUnAvailableDB()
     {
         $db = new SqlHelper();
         $news = $db->select("SELECT * FROM `news`")->fetchAll();

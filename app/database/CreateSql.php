@@ -7,7 +7,7 @@ use Core\Service;
 
 class CreateSql
 {
-    private $tables = array(
+    private static $tables = array(
         "CREATE TABLE IF NOT EXISTS `groups` (
             `id` int(11) NOT NULL AUTO_INCREMENT,
             `title` varchar(200) COLLATE utf8_persian_ci NOT NULL,
@@ -57,7 +57,7 @@ class CreateSql
              FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;"
     );
-    public function run($isPermission = false)
+    public static function run($isPermission = false)
     {
         $dbInfo = Service::databaseInfo();
         $dbName = $dbInfo['DB_NAME'];
@@ -67,7 +67,7 @@ class CreateSql
         $connection->query($query);
         $connection->close();
         $db = new SqlHelper();
-        foreach ($this->tables as $table) {
+        foreach (self::$tables as $table) {
             $db->createTable($table);
         }
         $db->close();
