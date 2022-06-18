@@ -13,6 +13,7 @@ $temporary = $temporary === "/" ? "" : substr($temporary, 1);
 $address = explode("/", $temporary);
 $isDomain = $address[0] !== $root;
 
+const DS = DIRECTORY_SEPARATOR;
 define("BASE_PATH", $mainDir);
 define("ROOT", $root);
 define("PROTOCOL", $protocol);

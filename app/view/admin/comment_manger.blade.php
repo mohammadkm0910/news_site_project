@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="<?php $this->asset('plugin/alertifyjs/alertify.rtl.min.css'); ?>">
     <link rel="stylesheet" href="<?php $this->asset('admin/css/style.css'); ?>">
     <link rel="stylesheet" href="<?php $this->asset('plugin/chartist-js/chartist.min.css'); ?>">
-    <?php $this->partial('admin.favicon'); ?>
+    @include('partial.admin.favicon')
     <title>مدیریت نظرات</title>
     <style></style>
 </head>
 <body>
-<?php $this->partial("admin.navbar", ["url" => "comment-manger"]); ?>
-<?php $this->partial("admin.sidebar"); ?>
+@php($url = "comment-manger")
+@include('partial.admin.navbar')
+@include('partial.admin.sidebar')
 <article class="wrapper">
 
     <div class="col-12">

@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="<?php $this->asset('plugin/fontawesome-pro-5.7.2/all.css'); ?>">
     <link rel="stylesheet" href="<?php $this->asset('admin/css/style.css'); ?>">
     <link rel="stylesheet" href="<?php $this->asset('plugin/chartist-js/chartist.min.css'); ?>">
-    <?php $this->partial('admin.favicon'); ?>
+    @include('partial.admin.favicon')
     <title>مدیریت</title>
 </head>
 <body>
-<?php $this->partial("admin.navbar", ["url" => "list-user"]); ?>
-<?php $this->partial("admin.sidebar"); ?>
+@php($url = "list-user")
+@include('partial.admin.navbar')
+@include('partial.admin.sidebar')
 <article class="wrapper">
     <div class="col-12">
         <div class="card-main">

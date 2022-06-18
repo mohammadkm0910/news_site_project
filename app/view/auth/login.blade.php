@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="<?php $this->asset('plugin/fontawesome-pro-5.7.2/all.css'); ?>">
     <link rel="stylesheet" href="<?php $this->asset('app/css/style.css'); ?>">
     <link rel="stylesheet" href="<?php $this->asset('plugin/alertifyjs/alertify.rtl.min.css'); ?>">
-    <?php $this->partial('app.favicon'); ?>
+    @include('partial.app.favicon')
     <title>ورود کاربر</title>
 </head>
 <body>
-<?php $this->partial("app.top-header"); ?>
+@include('partial.app.top-header')
 <article class="p-4">
     <div class="row mt-2 reverse-md">
-        <?php $this->partial("app.sidebar"); ?>
+        @include('partial.app.sidebar')
         <div class="col-md-8 col-9 p-md-2">
             <form  method="post" class="col-7 main-form" id="form-login" action="<?php $this->url('check-login'); ?>">
                 <header>
@@ -45,7 +45,7 @@
         </div>
     </div>
 </article>
-<?php $this->partial("app.bottom-footer"); ?>
+@include('partial.app.bottom-footer')
 <script src="<?php $this->asset('plugin/jquery/jquery.validate.min.js'); ?>"></script>
 <script src="<?php $this->asset('plugin/alertifyjs/alertify.min.js'); ?>"></script>
 <script src="<?php $this->asset('app/js/script.js'); ?>"></script>
